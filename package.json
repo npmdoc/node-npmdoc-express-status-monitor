@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"express-status-monitor",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "express-status-monitor",
+    "description": "api documentation for [express-status-monitor (v0.1.9)](https://github.com/RafalWilinski/express-status-monitor#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-express-status-monitor.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-express-status-monitor) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-express-status-monitor.svg)](https://travis-ci.org/npmdoc/node-npmdoc-express-status-monitor)",
     "devDependencies": {
-        "express-status-monitor": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "express-status-monitor": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-express-status-monitor",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-express-status-monitor",
+    "keywords": [
+        "documentation",
+        "express-status-monitor"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_express_status_monitor.js",
+    "name": "npmdoc-express-status-monitor",
+    "nameAlias": "npmdoc_express_status_monitor",
+    "nameOriginal": "npmdoc-express-status-monitor",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-express-status-monitor"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
