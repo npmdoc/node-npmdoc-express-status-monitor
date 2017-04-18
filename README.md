@@ -1,9 +1,14 @@
-# api documentation for  [express-status-monitor (v0.1.9)](https://github.com/RafalWilinski/express-status-monitor#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-express-status-monitor.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-express-status-monitor) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-express-status-monitor.svg)](https://travis-ci.org/npmdoc/node-npmdoc-express-status-monitor)
+# npmdoc-express-status-monitor
+
+#### api documentation for  [express-status-monitor (v0.1.9)](https://github.com/RafalWilinski/express-status-monitor#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-express-status-monitor.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-express-status-monitor) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-express-status-monitor.svg)](https://travis-ci.org/npmdoc/node-npmdoc-express-status-monitor)
+
 #### Realtime Monitoring for Express-based Node applications
 
-[![NPM](https://nodei.co/npm/express-status-monitor.png?downloads=true)](https://www.npmjs.com/package/express-status-monitor)
+[![NPM](https://nodei.co/npm/express-status-monitor.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/express-status-monitor)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-express-status-monitor/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-express-status-monitor_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-express-status-monitor/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-express-status-monitor/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-express-status-monitor/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-express-status-monitor/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-express-status-monitor/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-express-status-monitor/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "Rafal Wilinski",
-        "email": "raf.wilinski@gmail.com",
         "url": "http://rwilinski.me"
     },
     "bugs": {
@@ -27,22 +31,18 @@
     "contributors": [
         {
             "name": "Julien Breux",
-            "email": "julien.breux@gmail.com",
             "url": "https://github.com/JulienBreux/"
         },
         {
             "name": "Ferdinand Mütsch",
-            "email": "mail@ferdinand-muetsch.de",
             "url": "https://github.com/n1try/"
         },
         {
             "name": "Mattia Richetto",
-            "email": "mattia.richetto@gmail.com",
             "url": "https://github.com/mattiaerre"
         },
         {
             "name": "Jiri Spac",
-            "email": "capajj@gmail.com",
             "url": "https://github.com/capaj/"
         }
     ],
@@ -82,13 +82,11 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "rwilinski",
-            "email": "raf.wilinski@gmail.com"
+            "name": "rwilinski"
         }
     ],
     "name": "express-status-monitor",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/RafalWilinski/express-status-monitor.git"
@@ -105,16 +103,6 @@
     "version": "0.1.9"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module express-status-monitor](#apidoc.module.express-status-monitor)
-
-
-
-# <a name="apidoc.module.express-status-monitor"></a>[module express-status-monitor](#apidoc.module.express-status-monitor)
 
 
 
