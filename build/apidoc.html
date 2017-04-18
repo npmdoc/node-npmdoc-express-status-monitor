@@ -61,12 +61,85 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.express-status-monitor">module express-status-monitor</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-status-monitor.express-status-monitor">
+            function <span class="apidocSignatureSpan"></span>express-status-monitor
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.express-status-monitor" id="apidoc.module.express-status-monitor">module express-status-monitor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.express-status-monitor.express-status-monitor" id="apidoc.element.express-status-monitor.express-status-monitor">
+        function <span class="apidocSignatureSpan"></span>express-status-monitor
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config =&#x3e; {
+  config = validate(config);
+
+  const renderedHtml =
+    fs.readFileSync(path.join(__dirname, &#x27;/public/index.html&#x27;))
+      .toString()
+      .replace(/{{title}}/g, config.title)
+      .replace(/{{port}}/g, config.port)
+      .replace(/{{script}}/g, fs.readFileSync(path.join(__dirname, &#x27;/public/javascripts/app.js&#x27;)))
+      .replace(/{{style}}/g, fs.readFileSync(path.join(__dirname, &#x27;/public/stylesheets/style.css&#x27;)));
+
+  const middleware = (req, res, next) =&#x3e; {
+    socketIoInit(req.socket.server, config);
+
+    const startTime = process.hrtime();
+
+    if (req.path === config.path) {
+      if (config.iframe) {
+        if (res.removeHeader) {
+          res.removeHeader(&#x27;X-Frame-Options&#x27;);
+        }
+        if (res.remove) {
+          res.remove(&#x27;X-Frame-Options&#x27;);
+        }
+
+      }
+      res.send(renderedHtml);
+    } else {
+      onHeaders(res, () =&#x3e; {
+        onHeadersListener(res.statusCode, startTime, config.spans);
+      });
+
+      next();
+    }
+  };
+
+<span class="apidocCodeCommentSpan">  /* Provide two properties, the middleware and HTML page renderer separately
+   * so that the HTML page can be authenticated while the middleware can be
+   * earlier in the request handling chain.  Use like:
+   * ```
+   * const statusMonitor = require(&#x27;express-status-monitor&#x27;)(config);
+   * server.use(statusMonitor);
+   * server.get(&#x27;/status&#x27;, isAuthenticated, statusMonitor.pageRoute);
+   * ```
+   * discussion: https://github.com/RafalWilinski/express-status-monitor/issues/63
+   */
+</span>  middleware.middleware = middleware;
+  middleware.pageRoute = (req, res) =&#x3e; {
+    res.send(renderedHtml);
+  };
+  return middleware;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

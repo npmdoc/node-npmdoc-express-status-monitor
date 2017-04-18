@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/RafalWilinski/express-status-monitor#readme"
-
-    >express-status-monitor (v0.1.9)</a>
+    <a href="https://github.com/RafalWilinski/express-status-monitor#readme">express-status-monitor (v0.1.9)</a>
 </h1>
 <h4>Realtime Monitoring for Express-based Node applications</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.express-status-monitor">module express-status-monitor</a><ol>
 
@@ -85,18 +78,18 @@
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">config =&#x3e; {
+    <li>description and source-code<pre class="apidocCodePre">config =&gt; {
   config = validate(config);
 
   const renderedHtml =
-    fs.readFileSync(path.join(__dirname, &#x27;/public/index.html&#x27;))
+    fs.readFileSync(path.join(__dirname, '/public/index.html'))
       .toString()
       .replace(/{{title}}/g, config.title)
       .replace(/{{port}}/g, config.port)
-      .replace(/{{script}}/g, fs.readFileSync(path.join(__dirname, &#x27;/public/javascripts/app.js&#x27;)))
-      .replace(/{{style}}/g, fs.readFileSync(path.join(__dirname, &#x27;/public/stylesheets/style.css&#x27;)));
+      .replace(/{{script}}/g, fs.readFileSync(path.join(__dirname, '/public/javascripts/app.js')))
+      .replace(/{{style}}/g, fs.readFileSync(path.join(__dirname, '/public/stylesheets/style.css')));
 
-  const middleware = (req, res, next) =&#x3e; {
+  const middleware = (req, res, next) =&gt; {
     socketIoInit(req.socket.server, config);
 
     const startTime = process.hrtime();
@@ -104,16 +97,16 @@
     if (req.path === config.path) {
       if (config.iframe) {
         if (res.removeHeader) {
-          res.removeHeader(&#x27;X-Frame-Options&#x27;);
+          res.removeHeader('X-Frame-Options');
         }
         if (res.remove) {
-          res.remove(&#x27;X-Frame-Options&#x27;);
+          res.remove('X-Frame-Options');
         }
 
       }
       res.send(renderedHtml);
     } else {
-      onHeaders(res, () =&#x3e; {
+      onHeaders(res, () =&gt; {
         onHeadersListener(res.statusCode, startTime, config.spans);
       });
 
@@ -125,14 +118,14 @@
    * so that the HTML page can be authenticated while the middleware can be
    * earlier in the request handling chain.  Use like:
    * ```
-   * const statusMonitor = require(&#x27;express-status-monitor&#x27;)(config);
+   * const statusMonitor = require('express-status-monitor')(config);
    * server.use(statusMonitor);
-   * server.get(&#x27;/status&#x27;, isAuthenticated, statusMonitor.pageRoute);
+   * server.get('/status', isAuthenticated, statusMonitor.pageRoute);
    * ```
    * discussion: https://github.com/RafalWilinski/express-status-monitor/issues/63
    */
 </span>  middleware.middleware = middleware;
-  middleware.pageRoute = (req, res) =&#x3e; {
+  middleware.pageRoute = (req, res) =&gt; {
     res.send(renderedHtml);
   };
   return middleware;
@@ -149,3 +142,4 @@
     ]
 </div>
 </div>
+</body></html>
