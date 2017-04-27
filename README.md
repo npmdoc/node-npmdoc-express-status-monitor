@@ -1,6 +1,6 @@
 # npmdoc-express-status-monitor
 
-#### api documentation for  [express-status-monitor (v0.1.9)](https://github.com/RafalWilinski/express-status-monitor#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-express-status-monitor.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-express-status-monitor) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-express-status-monitor.svg)](https://travis-ci.org/npmdoc/node-npmdoc-express-status-monitor)
+#### basic api documentation for  [express-status-monitor (v0.1.9)](https://github.com/RafalWilinski/express-status-monitor#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-express-status-monitor.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-express-status-monitor) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-express-status-monitor.svg)](https://travis-ci.org/npmdoc/node-npmdoc-express-status-monitor)
 
 #### Realtime Monitoring for Express-based Node applications
 
@@ -100,7 +100,8 @@
         "test": "mocha --recursive"
     },
     "snyk": true,
-    "version": "0.1.9"
+    "version": "0.1.9",
+    "bin": {}
 }
 ```
 
